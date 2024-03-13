@@ -4,7 +4,7 @@
     </header>
     <main>
         <ul class="hero-container">
-            <li *ngFor="let hero of heros" >
+            <li *ngFor="let hero of heroes" >
                 <button [routerLink]="['/details/', hero.id]" >
                     <span class="id">
                         {{hero.id}}

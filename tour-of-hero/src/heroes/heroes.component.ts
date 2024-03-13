@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { heroes } from '../models/heroes';
 import { RouterModule } from '@angular/router';
+import { HeroService } from '../services/hero.service';
+import { Hero } from '../models/heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -12,5 +13,15 @@ import { RouterModule } from '@angular/router';
 })
 
 export class HeroesComponent {
-  heros = heroes;
+  heroes?: Hero[] ;
+  constructor(private heroService: HeroService){}
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  getHeroes() : void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
+  }
 }
