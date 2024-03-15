@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BmiGuard } from 'src/calories-intake/bmi.guard';
+import { UserGuard } from 'src/calories-intake/user.guard';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-    canActivate: [BmiGuard],
+    canActivate: [UserGuard],
   },
   {
-    path: 'bmi',
-    loadChildren: () => import('../calories-intake/bmi.module').then(m => m.BmiModule), 
+    path: 'user',
+    loadChildren: () => import('../calories-intake/user.module').then(m => m.UserModule), 
   },
 ];
 
