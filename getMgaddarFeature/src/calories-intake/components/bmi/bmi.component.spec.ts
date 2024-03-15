@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BmiFormComponent } from './bmi-form.component';
+import { BmiComponent } from './bmi.component';
 
-describe('BmiFormComponent', () => {
-  let component: BmiFormComponent;
-  let fixture: ComponentFixture<BmiFormComponent>;
+describe('BmiComponent', () => {
+  let component: BmiComponent;
+  let fixture: ComponentFixture<BmiComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BmiFormComponent]
+      declarations: [BmiComponent]
     });
-    fixture = TestBed.createComponent(BmiFormComponent);
+    fixture = TestBed.createComponent(BmiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
