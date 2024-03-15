@@ -5,13 +5,16 @@
 </header>
 <main class="flex flex-col gap-6 items-center mb-20">
     <div class="w-full justify-center gap-2">
-        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700" (click)="onClick('moderate')">
+        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700"
+                [ngClass]="{'bg-slate-700': carb === 'moderate'}" (click)="onClick('moderate')">
             Moderate carbs(30p/35f/35c)
         </button>
-        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700" (click)="onClick('low')">
+        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700"
+                [ngClass]="{'bg-slate-700': carb === 'low'}" (click)="onClick('low')">
             Low carbs(40p/40f/20c)
         </button>
-        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700" (click)="onClick('high')">
+        <button class="bg-slate-500 p-2 rounded-lg text-white shadow-md shadow-gray-700"
+                [ngClass]="{'bg-slate-700': carb === 'high'}" (click)="onClick('high')">
             High carbs(30p/20f/50c)
         </button>
     </div>

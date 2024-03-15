@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { UserService } from 'src/calories-intake/user.service';
 
@@ -6,12 +6,13 @@ import { UserService } from 'src/calories-intake/user.service';
   selector: 'app-macro',
   templateUrl: './macro.component.html',
   standalone: true,
-  imports: [NgFor]
+  imports: [NgFor, NgClass]
 })
 export class MacroComponent {
   private readonly userService: UserService = inject(UserService);
-  calories: number = this.userService.getCalories();
-  macros = [
+  public calories: number = this.userService.getCalories();
+  public carb: string = 'moderate';
+  public macros = [
     {macro :'carbs',val: 4, coef: 35},
     {macro: 'fats',val: 9, coef: 35},
     {macro: 'proteins',val: 4, coef: 30},
@@ -32,5 +33,6 @@ export class MacroComponent {
       this.macros[1].coef = 35;
       this.macros[2].coef = 30;
     }
+    this.carb = value;
   }
 }

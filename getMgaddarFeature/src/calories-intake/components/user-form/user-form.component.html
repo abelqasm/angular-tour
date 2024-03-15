@@ -7,10 +7,12 @@
             <h2>Please chose your measurment preferrence</h2>
         </header>
         <main class="flex gap-10 text-white justify-center">
-            <button class="bg-slate-500 p-2 rounded-lg shadow-md shadow-gray-700" (click)="changeMesure('kg')">
+            <button class="bg-slate-500 p-2 rounded-lg shadow-md shadow-gray-700" (click)="changeMesure('kg')"
+                [ngClass]="{'bg-slate-700': mesure === 'kg'}">
                 Kilograms / centimeters
             </button>
-            <button class="bg-slate-500 p-2 rounded-lg shadow-md shadow-gray-700"  (click)="changeMesure('pnd')">
+            <button class="bg-slate-500 p-2 rounded-lg shadow-md shadow-gray-700"  (click)="changeMesure('pnd')"
+                [ngClass]="{'bg-slate-700': mesure === 'pnd'}">
                 Pounds / inches
             </button>
         </main>
