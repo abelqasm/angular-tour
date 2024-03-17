@@ -10,7 +10,10 @@ import { UserService } from 'src/calories-intake/user.service';
 })
 export class BmiComponent {
   private readonly userService: UserService = inject(UserService);
-  bmi: number = this.userService.getBmi();
-  categorie:string = this.userService.getCategorie(this.bmi);
-
+  public bmi: number = 0;
+  public categorie:string = '';
+  constructor(){
+    this.userService.getBmi().subscribe(bmi => this.bmi = bmi);
+    this.userService.getCategorie(this.bmi).subscribe(cat => this.categorie = cat);
+  }
 }

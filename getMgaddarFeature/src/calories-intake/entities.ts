@@ -24,3 +24,8 @@ export type UserForm = FormGroup<{
   exercice: FormControl<string | null>;
   gender: FormControl<string | null>;
 }>;
+
+export type WeightAdvice = {
+  weight: string;
+  val: number;
+}

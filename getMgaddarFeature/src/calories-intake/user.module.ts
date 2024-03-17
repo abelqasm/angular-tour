@@ -15,21 +15,19 @@ const routes : Routes = [
             {
                 path: 'val',
                 component: ContainerComponent,
+                canActivate: [UserGuard],
                 children: [
                     {
                         path: 'bmi',
-                        canActivate: [UserGuard],
                         component: BmiComponent,
                     },
                     {
                         path: 'calories',
-                        canActivate: [UserGuard],
                         component: CaloriesComponent,
                         
                     },
                     {
                         path: 'macro',
-                        canActivate: [UserGuard],
                         component: MacroComponent,
                     }
                 ]

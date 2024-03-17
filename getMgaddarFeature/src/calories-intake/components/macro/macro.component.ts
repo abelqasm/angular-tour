@@ -10,13 +10,18 @@ import { UserService } from 'src/calories-intake/user.service';
 })
 export class MacroComponent {
   private readonly userService: UserService = inject(UserService);
-  public calories: number = this.userService.getCalories();
+  public calories: number = 0;
   public carb: string = 'moderate';
   public macros = [
     {macro :'carbs',val: 4, coef: 35},
     {macro: 'fats',val: 9, coef: 35},
     {macro: 'proteins',val: 4, coef: 30},
   ]
+
+  constructor() {
+    this.userService.getCalories().subscribe(cal => this.calories = cal)
+  }
+
   onClick(value: string){
     if (value === 'high'){
       this.macros[0].coef = 50;
